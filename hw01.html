@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3 test</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="hw01_jqueryRowspanizer.js"></script>
+    <link rel="stylesheet" type="text/css" href="hw01_main.css">
+</head>
+
+<body>
+    <div>
+        hello World!
+    </div>
+    <p>
+    <div>
+        D3.js--01/08
+    </div>
+    <p>
+    <hr>
+    <div id="poem">
+        關&nbsp;&nbsp;關&nbsp;&nbsp;雎&nbsp;&nbsp;鳩<br>
+        在&nbsp;&nbsp;河&nbsp;&nbsp;之&nbsp;&nbsp;州<br>
+        窕&nbsp;&nbsp;窕&nbsp;&nbsp;淑&nbsp;&nbsp;女<br>
+        君&nbsp;&nbsp;子&nbsp;&nbsp;好&nbsp;&nbsp;球<br>
+        <br> 
+        詩‧周南‧關雎
+    </div>
+    <pre>
+        關  關  雎  鳩
+        在  河  之  州
+        窕  窕  淑  女
+        君  子  好  球  
+        詩‧周南‧關雎
+    </pre>
+    <p>
+    
+    <hr>
+    
+    <h1>小王子</h1><p>
+    然後他又回到狐狸那裡。<p>
+    「再見了!」小王子說。
+    「再見了!」狐狸說。
+    <blockquote>「我的秘密很簡單;<strong>唯有心才能看得清楚</strong>，眼睛是看不到真正重要的東西的。」</blockquote>
+    小王子複述一遍：「真正的東西不是用眼睛可以看得到的。」<p>
+    
+    <hr>
+    
+    <table border="1">
+       
+        <tr>
+           <td colspan="4">
+                直轄市長辦公地址
+            </td>
+        </tr>
+        <tr id="tColumn">
+            <td>
+                直轄市
+            </td>
+            <td>
+                職稱
+            </td>
+            <td>
+                姓名
+            </td>
+            <td>
+                辦公地址
+            </td>
+        </tr>
+       
+        <tbody id="tBody">
+        </tbody>
+       
+    </table>
+    <script>
+         
+        var array=[
+            ['臺北市','市長','柯文哲','臺北市信義區西村里市府路1號'],
+            ['高雄市','市長','陳菊','高雄市苓雅區晴朗里四維3路2號'],
+            ['新北市','市長','朱立倫','新北市板橋區中山路1段161號'],
+            ['臺中市','市長','林佳龍','臺中市西屯區臺灣大道3段99號'],
+            ['臺南市','市長','賴清德','臺南市安平區永華路2段6號'],
+            ['桃園市','市長','鄭文燦','桃園市桃園區光興里縣府路1號']
+        ];
+
+        var tBody = document.getElementById('tBody');
+        for(var i = 0; i < array.length; i++){
+            $('#tBody').append('<tr>');
+            for(var j = 0; j < 4; j++){
+                if(j == 1){
+                    $('#tBody').append('<td class="needMerge">' + array[i][j] + '</td>');
+                }else
+                $('#tBody').append('<td>' + array[i][j] + '</td>');
+
+            }
+            $('#tBody').append('</tr>');
+        }
+        
+        $("#tBody").rowspanizer({vertical_align: 'middle'});
+    </script>
+    
+    
+    <hr>
+    <a href="http://www.google.com/doodles/evidence-of-water-found-on-mars">
+        <img src="http://www.google.com/logos/doodles/2015/evidence-of-water-found-on-mars-5652760466817024.2-hp2x.gif" alt="google" width="200px">
+    </a>
+    
+    <hr>
+    <p>
+    真正的東西不適用眼睛可以看得到的
+    
+</body>
+
+</html>
