@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <script src="topojson.min.js"></script>
+    <style>
+        .map-boundary {
+            stroke: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="900" height="600"></svg>
+    <script>
+        //1.地理資料檔: topoTaiwan.json
+        d3.json("topoTaiwan.json", function (topoData) {
+
+            bind(topoData);
+            render();
+
+        });
+
+        function render() {
+            //產生不同顏色
+            var fScale = d3.scale.category20c();
+
+            //從這裡開始修改
+            d3.selectAll("path")
+                .attr({
+                    fill: (function(d, i) {
+                        return fScale(i);
+                    })
+                })
+                .on("mouseover", function(data){
+                    (data.C_Name)
+                    console.log(data);
+                });
+            
+        }
+
+        function bind(topoData) {
+            // 2.地理投影器: 設定投影方式(麥卡托)、定位點([經,緯度])、縮放(scale)
+            var projection = d3.geo.mercator().center([121, 24]).scale(6000);
+
+            // 3.路徑產生器: d3.geo.path()
+            var path = d3.geo.path().projection(projection);
+
+            // 4.地理資料檔: 使用topojson.js載入地理資料
+            var topo = topojson.feature(topoData, topoData.objects["county"]);
+
+            // 綁定path與載入的地理資料(features:每一地理區劃)
+            var selection = d3.select("svg").selectAll("path").data(topo.features);
+            //            console.log(topo.features);   
+            selection.enter().append("path");
+            selection.exit().remove();
+            selection.classed("map-boundary", true).attr("d", path);
+        }
+    </script>
+
+</body>
+
+</html>

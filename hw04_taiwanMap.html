@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="hw04_taiwanMap.js"></script>
+    <script src="d3-topoTaiwan/topojson.min.js"></script>
+    <style>
+        .map-boundary {
+            stroke: #eee;
+        }
+        /* 提示框樣式*/
+        
+        #tool2p {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            background: #fff;
+            width: 200px;
+            height: auto;
+            padding: 0px 10px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        #tool2p.hidden {
+            display: none;
+        }
+        
+        path:hover {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+   <!-- 提示框 -->
+    <div id="tool2p" class="hidden">
+        <p><strong id="city">Hello</strong></p>
+        <p id="content">tool2p</p>
+    </div>
+    
+    <svg width="900" height="600"></svg>
+
+</body>
+
+</html>

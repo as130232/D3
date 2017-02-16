@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="hw04.js"></script>
+</head>
+<style>
+    /* X、Y軸樣式 */
+    
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: auto;
+        height: 500px;
+    }
+    
+    .axis text {
+        font-size: 9px;
+        fill: blue;
+    }
+    /* 提示框樣式*/
+    
+    #tool2p {
+        position: absolute;
+        left: 50px;
+        top: 100px;
+        background: #fff;
+        width: 200px;
+        height: auto;
+        padding: 0px 10px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    #tool2p.hidden {
+        display: none;
+    }
+    
+    circle:hover {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <div id="tool2p" class="hidden">
+        <p><strong id="city">Hello</strong></p>
+        <p id="industry">tool2p</p>
+    </div>
+    <div id="loading"></div>
+    <button id="createInvoiceInfo">產生發票資訊</button>
+    <p>
+    <button id="createCancerInfo">產生癌症資訊</button>
+</body>
+
+</html>
