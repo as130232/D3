@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Google Map + D3 project</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="hw05_map.js"></script>
+	<!-- API網址↓--->
+	<!-- https://console.developers.google.com/apis/credentials?project=d3js-toilent&hl=zh-tw ----->
+    <!-- Google Map API 取得憑證的key，需要有金鑰才能做開發----->
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyAE-xQyQedotk9S3cvExCcfMkO6tkrt_1o&sensor=true"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+
+    <style>
+        html,
+        body,
+        #map {
+            width: 99%;
+            height: 90%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .stations,
+        .stations svg {
+            position: absolute;
+        }
+        
+        .stations svg {
+            width: 60px;
+            height: 20px;
+            padding-right: 100px;
+            font: 10px sans-serif;
+        }
+        
+        .stations circle {
+            fill: gold;
+            stroke: black;
+            stroke-width: 1.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+</body>
+
+</html>

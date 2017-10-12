@@ -156,13 +156,13 @@ function init() {
             });
 
         d3.select("svg#" + svgId)
-            .append("g") //add group
-            .append("rect")
-            .attr({
-                width: "100%",
-                height: "100%",
-                fill: "white"
-            });
+//            .append("g") //add group
+//            .append("rect")
+//            .attr({
+//                width: "100%",
+//                height: "100%",
+//                fill: "white"
+//            });
     }
 
     //共用:綁定資料
